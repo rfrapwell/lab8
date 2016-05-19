@@ -1,4 +1,7 @@
 //
+//Edited by: Ryan Frapwell
+//lab8
+//
 //CMPS 335
 //Exam framework.
 //Name this program lab8.cpp.
@@ -144,6 +147,7 @@ int main(int argc, char *argv[])
     double tolerance = 0;
     
     if (argc > 2) {
+        //tolerance is set only if there is a commandline arguemnt to do so
         tolerance = atof(argv[2]);
     }
 
@@ -172,8 +176,9 @@ int main(int argc, char *argv[])
         }
         cout << "bad element count: " << count << endl;
         cout << "unit test complete." << endl;
-    } else {
 
+    } else {
+        //this happens when the program is ran with 2 or fewer arguments
         cout << "cs335 Surface-based body shape index calculator.\n";
         cout << endl;
         cout << "Input your 4 values now.\n";
@@ -182,7 +187,7 @@ int main(int argc, char *argv[])
         cout << " . body surface area\n";
         cout << " . vertical trunk circumference\n";
         cin >> sbsi.h >> sbsi.wc >> sbsi.bsa >> sbsi.vtc;
-        //
+        
         Flt val = bodyShapeIndex(&sbsi);
         cout << "Thanks.\n";
         cout << "Your SBSI index is: " << val << endl;
