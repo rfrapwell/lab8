@@ -162,10 +162,9 @@ int main(int argc, char *argv[])
             sbsi.wc = testdata[i*col+1];
             sbsi.bsa = testdata[i*col+3];
             sbsi.vtc = testdata[i*col+2];
-            cout << sbsi.h << "   " << sbsi.wc << "    " << sbsi.bsa << 
-                "   " << sbsi.vtc << "   " << testdata[i*col+4] << "   ";
+            printf("%g %*g %*g %*g %*g ", sbsi.h, 4, sbsi.wc, 9, sbsi.bsa, 4, sbsi.vtc, 12, testdata[i*col+4]);
             Flt val = bodyShapeIndex(&sbsi);
-            cout << val;
+            printf("%*g", 10 ,val);
             double diff = val - testdata[i*col+4]; 
             diff = fabs(diff);
             if (diff > tolerance) {
